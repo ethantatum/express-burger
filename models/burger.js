@@ -7,5 +7,19 @@ const burger = {
             cb(res);
         });
     },
-    
+
+    create: function(vals, cb) {
+        orm.insertOne('burgers', 'burger_name', vals, function(res){
+            cb(res);
+        });
+    },
+
+    update: function(bool, number, cb) {
+        orm.updateOne('burgers', 'devoured', bool, 'id', number, function(res) {
+            cb(res);
+        });
+    }
 }
+
+// Export for the controller
+module.exports = burger;
