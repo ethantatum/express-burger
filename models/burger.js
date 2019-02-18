@@ -14,8 +14,8 @@ const burger = {
         });
     },
 
-    update: function(bool, number, cb) {
-        orm.updateOne('burgers', 'devoured', bool, 'id', number, function(res) {
+    update: function(colSetVal, condition, cb) {
+        orm.updateOne('burgers', colSetVal, condition, function(res) {
             cb(res);
         });
     }
