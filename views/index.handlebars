@@ -2,43 +2,49 @@
 
 <h2>Featuring the world-famous Handlebar Hot Sauce</h2>
 
-<h3>Choose a burger to eat!</h3>
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-	    {{this.burger_name}}
+<div class="to-eat">
+  <h2>Choose a burger to eat!</h2>
+  <ul>
+    {{#each burgers}}
+      {{#unless this.devoured}}
+        <li>
+        {{this.burger_name}}
 
-	    <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
-		    {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
-	    </button>
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+        <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
+          {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
+        </button>
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+</div>
 
-<h3>Burgers that have been eaten</h3>
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      <li>
-	    {{this.burger_name}}
+<div class="add-burger">
+  <h2>Add a Burger</h2>
+  <form class="create-form">
 
-	    <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
-		    {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
-	    </button>
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="brgr" name="burger_name">
+    </div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="brgr" name="burger_name">
-  </div>
+<div class="eaten">
+  <h2>Burgers that have been eaten</h2>
+  <ul>
+    {{#each burgers}}
+      {{#if devoured}}
+        <li>
+        {{this.burger_name}}
 
-  <button type="submit">Add Burger</button>
-</form>
+        <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
+          {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
+        </button>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>

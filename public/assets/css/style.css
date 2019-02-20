@@ -1,10 +1,29 @@
+#background-image {
+    background-image: url('/diner.jpg');
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+    color: black;
+    background-color: #EFE6E6;
+    padding: 10px;
+    opacity: 0.60;
+    text-align: center;
+}
+
+.to-eat, .add-burger, .eaten {
+    float: left;
+    margin: 25px 35px 5px 45px;
+}
+
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background: #EFE6E6;
   }
   
-  .label {
+  label {
+    background-color: #EFE6E6;
     font-weight: bold;
   }
   
