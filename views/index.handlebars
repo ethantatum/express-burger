@@ -5,8 +5,14 @@
 <h3>Choose a burger to eat!</h3>
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
+    {{#unless this.devoured}}
+      <li>
+	    {{this.burger_name}}
+
+	    <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
+		    {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
+	    </button>
+      </li>
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +21,13 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burger/burger-block devoured=true}}
+      <li>
+	    {{this.burger_name}}
+
+	    <button class="change-eaten" data-id="{{this.id}}" data-eaten="{{this.devoured}}">
+		    {{#if this.devoured}}YOU ALREADY ATE ME!{{else}}EAT ME!{{/if}}
+	    </button>
+      </li>
     {{/if}}
   {{/each}}
 </ul>

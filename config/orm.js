@@ -36,9 +36,9 @@ const orm = {
         });
     },
 
-    insertOne: function(table, column, colVal, cb) {
+    insertOne: function(table, column, vals, cb) {
         let queryString = `INSERT INTO ${table} (${column.toString()}) VALUES (?)`;
-        connection.query(queryString, colVal, function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }
@@ -48,6 +48,7 @@ const orm = {
 
     updateOne: function(table, colSetVal, condition, cb) {
         let queryString = `UPDATE ${table} SET ${objToSql(colSetVal)} WHERE ${condition}`;
+        console.log(queryString);
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
