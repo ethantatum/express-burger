@@ -6,9 +6,11 @@
 h1, h2, h3 {
     color: black;
     background-color: #EFE6E6;
+    border-radius: 5px;
     padding: 10px;
     opacity: 0.60;
     text-align: center;
+    text-shadow: 2px 2px #DBD3D3;
 }
 
 .to-eat, .add-burger, .eaten {
@@ -16,15 +18,27 @@ h1, h2, h3 {
     margin: 25px 35px 5px 45px;
 }
 
+button {
+    background-color: #625959;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 li {
     padding: 5px;
     margin: 5px;
     background: #EFE6E6;
+    border-radius: 5px;
   }
   
   label {
-    background-color: #EFE6E6;
+    padding: 5px;
+    
+    background: #EFE6E6;
+    border-radius: 5px;
     font-weight: bold;
+
   }
   
   .create-update-form {
